@@ -1,0 +1,25 @@
+
+
+About this project
+
+This is a web application in python using Django framework which enables a logged in user to search other users based on different profile-search parameters , such as first Name, last Name, company Name, marital Status, hobbies, age, gender and emailID.
+
+This application has a template directory consisting of four templates these have been designed using twitter bootstrap.
+
+Its static and store directory consist of all the static content i.e files of css/js and images.
+
+Its database uses MySQl and the code of model.py in the aperson directory defines the database setup.
+
+The code of url.py in the newsite directory defines which url's can be used.
+
+The code of view.py in the aperson directory acts as a connection between templates and url.
+
+The  code of settings.py in the newsite directory defines the overall setting of the application.
+
+
+
+Technologies
+
+It is a web application in python using django framework which uses MySQL as a database and twitter bootstrap to design the templates.
+
+
