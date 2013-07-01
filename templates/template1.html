@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>LOGIN</title>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen" />
+
+<!-- Bootstrap -->
+    
+</head>
+<body {% load staticfiles %} background= "{% static "wall.jpg" %}" >
+{% load staticfiles %}
+      <img src= " {% static "grass.jpg"  %}" alt="Smiley face" > 
+	
+  
+  
+<br>
+<br>
+<br><br>
+<br>
+  
+
+
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1">
+
+<!--Sidebar content-->
+</div>
+<div class ="span3">
+ {% if error %}
+
+      <h1>  <p style="color: red;">PLEASE</p></h1>
+	<P> <h4><li>Enter a valid email and its corresponding password.</li></h4></p>
+ {% endif %}
+</div>
+<div class="span5">   
+  <div class="row-fluid">
+    <div class="span4 offset1">
+
+	<p><b><h1>LOGIN</h1></b></p>
+</div>
+    </div>
+   
+  <br>
+<br>
+<div class="row-fluid">
+<div class="span12">
+
+        <form action="/home/" method="post">
+	
+      <tr><th><b><h3>E-mail</h3></b></th><td><input class="input-xlarge" type="email" name="email" placeholder="Email"></td></tr>
+
+<div class="row-fluid">
+<div class="span12">
+<br>
+	  <tr><th><b><h3>Password</h3></b></th><td> <input class="input-xlarge" type="password" name="pwd" placeholder="Password"></td></tr>
+
+      <tr><td>
+<div class="row-fluid">
+<div class="span12">
+
+<br>
+ <br>
+<button class="btn  btn-primary" type="submit">
+
+Sign in</button>
+	 </td>
+        </tr>
+        </form> 
+ </div>
+</div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+   
+   
+
+<br>
+
+ <div class ="span3">
+	<p><b><h2>New User</h2></b></p>
+<br>
+<p><h1>Register</h1></p>
+<p><h1>Now.</h1></p>
+<br>
+    <form action="/register/" method="get">
+	<td><button class="btn  btn-large btn-primary" type="submit">
+
+Register</button></td>
+   </form> 
+</div>
+
+
+
+</body>
+</html>
+

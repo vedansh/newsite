@@ -1,0 +1,76 @@
+<html>
+<head>
+<title> search </title>
+<!-- Bootstrap -->
+   {% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen" />
+<style>
+
+
+.input-text {
+	border:none;
+	border-radius: 5px;
+	box-shadow:none;
+}
+
+</style>
+</head>
+<body {% load staticfiles %} background= "{% static "wall.jpg" %}">
+<img src="{{ STATIC_URL }}grass.jpg" alt="Smiley face" >
+<form enctype="multipart/form-data" method="post" action="/result/" >
+
+
+<h1>SEARCH PEOPLE</h1>
+
+ 
+
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span3">
+<!--Sidebar content-->
+</div>
+<div class="span5">
+													<fieldset>
+														<h4><legend><p style="color: midnightblue;">Please Fill the fields by which you want to search </p></legend></h4>
+														
+														
+														<tr class="row"><th><h4>First Name:</h4></th> <td> <input class="input-xlarge" type="text" name="fname" class="input-text" /> </td></tr>
+
+
+<br>			
+														<tr class="row"><th><h4>Last Name:</h4></th> <td> <input class="input-xlarge" type="text" name="lname" class="input-text" /> </td></tr>
+<br>
+ <tr class="row"><th><h4> E-mail:</h4> </th> <td><input class="input-xlarge" type="email" name="email" class="input-text"/> </td></tr>
+
+<br>
+	  
+														<tr class="row"><th><h4>Gender:</h4></th> <td> <input type="radio" name="gender" value="m" /><b> Male</b> <input type="radio" name="gender" value="f" /> <b>Female</b> </td></tr>
+<br>						
+														<tr class="row"><th><h4>Age:</h4></th> <td>  <input class="input-xlarge" type="number" name="age" min="18" max="100"/> </td></tr>
+<br>
+														<tr class="row"><th><h4>Company:</h4></th> <td> <input class="input-xlarge" type="text" name="company" class="input-text"/> </td></tr>	
+<br>	
+														
+														<tr class="row"><th><h4>Martial status:</h4></th> <td> <input type="radio" name="mstatus" value="M" /><b> Married </b><input type="radio" name="mstatus" value="S" /><b>Single</b><input type="radio" name="mstatus" value="O" /><b>Others </b></td></tr>
+<br>
+<br>
+														
+														<tr class="row"><th><td><button class="btn  btn-large btn-primary" type="submit">
+
+SEARCH</button></td></th></tr> 
+
+													
+														
+													</fieldset>
+</div>
+ <div class="span4">
+
+</div>
+</div>
+</div>
+															
+							</form>	
+<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>			 
+</body>
+</html>

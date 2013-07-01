@@ -1,0 +1,74 @@
+<html>
+<head>
+<title> results </title>
+<!-- Bootstrap -->
+    {% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen" />
+<style>
+
+.input-text {
+	border:none;
+	border-radius: 5px;
+	box-shadow:none;
+}
+
+</style>
+
+</head>
+<body {% load staticfiles %} background= "{% static "wall.jpg" %}">
+<img src="{{ STATIC_URL }}grass.jpg" alt="Smiley face" >
+<form enctype="multipart/form-data" method="post" action="/newsearch/" >
+<section>
+<center>
+
+<br>
+	<br>
+<h1>SEARCH RESULTS</h1>
+<br>
+ <br>
+</center>
+</section>
+<section>
+<center>
+
+ {% if data %}
+
+	<table border="1" class="table table-striped">
+<tr>
+<th>First name</th><th>Last name</th><th>Age</th><th>Gender</th><th>Email</th><th>Company</th><th>Hobbies</th><th>Martial status</th>
+</tr>
+        <ul>
+            {% for k in data %}
+            <tr>
+<td>{{ k.first_name }}</td><td>{{ k.last_name }}</td><td>{{ k.age }}</td>
+{% if k.gender == 'm' %}<td>{{ "male" }}</td>{% else %}<td>{{ "female" }}</td>{% endif %}
+<td>{{ k.email }}</td><td>{{ k.company }}</td><td width = 300>{{ k.hobbies }}</td>
+{% if k.martial_status == 'M' %}<td>{{ "Married" }}</td>{% elif k.martial_status == 'S' %}<td>{{ "Single" }}</td>{% elif k.martial_status == 'O' %}<td>{{ "Others" }}</td> {% endif %}
+</tr>
+            {% endfor %}
+        </ul>
+	{% else %}
+	     <h2><p style="color: red;">No results were found.</p></h2>
+    {% endif %}
+</table>
+</center>
+</section>
+</form>	
+<section>
+ <br><br><br>
+	<p><h3><b>For another search.</b></h3></p>
+    <form enctype="multipart/form-data" method="post" action="/newsearch/">
+	<td><button class="btn  btn-large btn-primary" type="submit">
+
+Search Again</button></td>
+   </form> 
+</section>
+
+
+<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>		 												
+
+		 
+</body>
+</html>
+
