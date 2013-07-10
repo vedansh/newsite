@@ -12,5 +12,6 @@ urlpatterns = patterns('',
     url(r'^registerme/$', views.check2),
     url(r'^result/$',views.search),
     url(r'^newsearch/$',views.newsearch),
+    url(r'^tweets/$',views.tweets),
 )
 

@@ -2,12 +2,24 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from aperson import models
+import tweepy
 
 def login(request):
     return render(request, 'template1.html', {'error': False})
 
 def errlogin(request):
     return render(request, 'template1.html', {'error': True})
+
+def tweets(request):
+    auth = tweepy.OAuthHandler("yhpKmzu1rGplnCQbqjB90Q", "m2qrNubyd9kkyckUegUd3fiCGQe4WwS0HtyDii47Hk")
+    auth.set_access_token("1568780882-4Yf9sNEbD0LixqGgSX2t0Mr0brjR4gYARZg8M3q", "rxOjWANG7pBsl6jaijpxAJgMPOWG19yGn5JtnwLpPE")
+    api = tweepy.API(auth)
+    if 'hash' in request.GET:
+	a = request.GET['hash']
+	if(a[0]!='#'):
+	    a='#'+a
+	s=api.search(q=a,count=100)
+	return render(request, 'template5.html',{'tweet': s})
 
 def check(request):
     if request.method == 'POST':

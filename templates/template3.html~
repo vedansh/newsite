@@ -16,8 +16,9 @@
 </style>
 </head>
 <body {% load staticfiles %} background= "{% static "wall.jpg" %}">
-<img src="{{ STATIC_URL }}grass.jpg" alt="Smiley face" >
-<form enctype="multipart/form-data" method="post" action="/result/" >
+{% load staticfiles %}
+      <img src= " {% static "grass.jpg"  %}" alt="Smiley face" > 
+
 
 
 <h1>SEARCH PEOPLE</h1>
@@ -26,11 +27,12 @@
 
 <div class="container-fluid">
 <div class="row-fluid">
-<div class="span3">
+<div class="span2">
 <!--Sidebar content-->
 </div>
 <div class="span5">
-													<fieldset>
+<form enctype="multipart/form-data" method="post" action="/result/" >		
+											<fieldset>
 														<h4><legend><p style="color: midnightblue;">Please Fill the fields by which you want to search </p></legend></h4>
 														
 														
@@ -61,10 +63,29 @@ SEARCH</button></td></th></tr>
 
 													
 														
-													</fieldset>
+</form>											</fieldset>
 </div>
- <div class="span4">
+ <div class="span5">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<form enctype="multipart/form-data" method="get" action="/tweets/" >
+<h1><p style="color: midnightblue;">Enter a word to be searched. </p></h1>
+<br>	
+<div class="input-prepend">
+<span class="add-on">#</span>
+<input class="span8" id="prependedInput" type="text" name="hash" placeholder="hashtag">
+</div>
+<br>
+<br>
+<tr class="row"><th><td><button class="btn  btn-large btn-primary" type="submit">
+
+SEARCH tweet</button></td></th></tr> 
+</form>
 </div>
 </div>
 </div>

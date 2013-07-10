@@ -16,7 +16,8 @@
 
 </head>
 <body {% load staticfiles %} background= "{% static "wall.jpg" %}">
-<img src="{{ STATIC_URL }}grass.jpg" alt="Smiley face" >
+{% load staticfiles %}
+      <img src= " {% static "grass.jpg"  %}" alt="Smiley face" > 
 <form enctype="multipart/form-data" method="post" action="/newsearch/" >
 <section>
 <center>

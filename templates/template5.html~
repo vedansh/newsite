@@ -1,0 +1,47 @@
+<html>
+<head>
+<title> results </title>
+<!-- Bootstrap -->
+    {% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" media="screen" />
+<style>
+
+.input-text {
+	border:none;
+	border-radius: 5px;
+	box-shadow:none;
+}
+
+</style>
+
+</head>
+<body {% load staticfiles %} background= "{% static "wall.jpg" %}">
+{% load staticfiles %}
+      <img src= " {% static "grass.jpg"  %}" alt="Smiley face" > 
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span0.1">
+<!--Body content-->
+</div>
+<div class="span11.8">
+{% if tweet %}
+ <h2>  <p style="color: red;">TWEETS</p></h2>
+<table border="1" class="table table-striped">
+        <ul>
+            {% for a in tweet %}
+           <tr> <td>{{ forloop.counter }}</td><td><h4><b>{{ a.text }}</b></h4></td></tr>
+            {% endfor %}
+        </ul>
+</table>
+ {% else %}
+   <h1>  <p style="color: red;">NO RESULTS WERE FOUND.</p></h1>
+ {% endif %}
+
+<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>	
+ 												
+</div>
+</div>
+</div>	 
+</body>
+</html>
